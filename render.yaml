@@ -1,0 +1,10 @@
+render.services:
+  - type: web
+    name: stvds-backend
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    port: 5000
+    envVariables:
+      - name: FLASK_APP
+        value: app.py 

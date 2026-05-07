@@ -1,0 +1,40 @@
+{
+  "job_id": "b51c5e8d-75a3-4abf-a637-fef8a74bd5c2",
+  "generated_at": "2026-05-06T06:53:14.516822Z",
+  "summary": {
+    "total_violation_frames": 2,
+    "total_violations": 2,
+    "no_helmet_count": 1,
+    "triple_riding_count": 1,
+    "phone_usage_count": 0
+  },
+  "records": [
+    {
+      "frame_index": 0,
+      "timestamp": "0:00:00",
+      "evidence_image": "violation_00000.jpg",
+      "violations": [
+        {
+          "type": "No Helmet",
+          "severity": "High",
+          "detail": "Rider detected without helmet"
+        }
+      ],
+      "max_severity": "High"
+    },
+    {
+      "frame_index": 8,
+      "timestamp": "0:00:03",
+      "evidence_image": "violation_00008.jpg",
+      "violations": [
+        {
+          "type": "Triple Riding",
+          "severity": "High",
+          "detail": "3 persons detected on vehicle"
+        }
+      ],
+      "max_severity": "High"
+    }
+  ],
+  "status": "completed"
+}
