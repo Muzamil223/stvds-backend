@@ -1,10 +1,10 @@
-render.services:
+services:
   - type: web
     name: stvds-backend
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: python app.py
-    port: 5000
-    envVariables:
-      - name: FLASK_APP
-        value: app.py 
+    startCommand: gunicorn -w 2 -b 0.0.0.0:$PORT --timeout 300 app:app
+    disk:
+      name: stvds-data
+      mountPath: /opt/render/project/src/data
+      sizeGB: 10

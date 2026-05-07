@@ -31,8 +31,9 @@ from report_generator import generate_report
 app = Flask(__name__)
 CORS(app, resources={r"/api/*": {"origins": "*"}})
 
-UPLOAD_FOLDER  = os.path.join(os.path.dirname(__file__), "uploads")
-RESULTS_FOLDER = os.path.join(os.path.dirname(__file__), "results")
+UPLOAD_FOLDER  = os.environ.get("UPLOAD_FOLDER", os.path.join(os.path.dirname(__file__), "uploads"))
+RESULTS_FOLDER = os.environ.get("RESULTS_FOLDER", os.path.join(os.path.dirname(__file__), "results"))
+MODEL_PATH = os.environ.get("MODEL_PATH", "yolov8n.pt")
 os.makedirs(UPLOAD_FOLDER,  exist_ok=True)
 os.makedirs(RESULTS_FOLDER, exist_ok=True)
 
